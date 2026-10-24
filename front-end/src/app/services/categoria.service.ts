@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class CategoriaService {
 
-  private baseUrl:string = "hhtp://localhost:8080";
+  private baseUrl:string = "http://localhost:8080";
 
   constructor(private httpClient : HttpClient){}
 
