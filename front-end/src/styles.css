@@ -10,6 +10,8 @@
   --cor-primaria: #4338ca;
   --cor-primaria-escura: #3730a3;
   --cor-perigo: #b91c1c;
+  --cor-editar: #998211;
+  --cor-editar-escura: #7e6b0b;
   --cor-perigo-escura: #991b1b;
   --cor-fundo: #f8fafc;
   --cor-superficie: #ffffff;
@@ -104,8 +106,19 @@ h1 {
   font-size: 0.75rem;
 }
 
+.btn-editar {
+  background: var(--cor-editar);
+  padding: 0.375rem 0.75rem;
+  font-size: 0.75rem;
+  margin: 5px;
+}
+
 .btn-perigo:hover {
   background: var(--cor-perigo-escura);
+}
+
+.btn-editar:hover {
+  background: var(--cor-editar-escura);
 }
 
 .btn-perigo:focus-visible {

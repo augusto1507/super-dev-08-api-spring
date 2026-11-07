@@ -9,3 +9,8 @@ export interface CategoriaResponse{
     descricao: string;
     ativa: boolean;
 }
+
+export interface categoriaEditarRequest{
+    nome: string,
+    descricao: String
+}

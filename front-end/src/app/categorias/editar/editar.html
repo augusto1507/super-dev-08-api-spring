@@ -1,0 +1,21 @@
+<div class="cartao">
+    <div class="cabecalho-pagina">
+        <h1>Editar Categoria</h1>
+        <a routerLink="/categorias" class="voltar">Voltar</a>
+    </div>
+
+    <div class="campo">
+        <label for="nome" >Nome:</label>
+        <input type="text" [(ngModel)]="form().nome"  id="nome">
+    </div>
+
+    <div class="campo">
+        <label for="descricao">Descrição:</label>
+        <input type="text" [(ngModel)]="form().descricao" id="descricao" >
+    </div>
+
+    <div class="acoes">
+        <button type="button" class="btn btn-primario" (click)="editar()" >Salvar</button>
+    </div>
+</div>
+

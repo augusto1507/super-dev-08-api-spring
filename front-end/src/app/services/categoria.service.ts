@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { CategoriaCadastrarRequest, CategoriaResponse } from '../model/categoria.model';
+import { CategoriaCadastrarRequest, categoriaEditarRequest, CategoriaResponse } from '../model/categoria.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -27,5 +27,15 @@ export class CategoriaService {
   apagar(id: number): Observable<void>{
     const url = this.baseUrl + "/categorias/" + id;
     return this.httpClient.delete<void>(url);
+  }
+
+  editar(id: number ,categoria: categoriaEditarRequest): Observable<void>{
+    const url=this.baseUrl  + "/categorias/" + id;
+    return this.httpClient.put<void>(url, categoria);
+  }
+
+  obterPorId(id: number): Observable<CategoriaResponse>{
+    const url = this.baseUrl + "/categorias/" + id;
+    return this.httpClient.get<CategoriaResponse>(url);
   }
 }

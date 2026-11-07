@@ -16,8 +16,10 @@
                 </tr>
             </thead>
             <tbody>
+                
                 @for (categoria of categorias(); track categoria.id) {
-                    <tr>
+                    @if (categoria.ativa) {
+                        <tr>
                         <td class="suave">{{categoria.id}}</td>
                         <td class="nome">{{categoria.nome}}</td>
                         <td class="suave">{{categoria.descricao}}</td>
@@ -30,8 +32,12 @@
                         </td>
                         <td class="direita">
                             <button type="button" class="btn btn-perigo" (click)="apagar(categoria.id)">Apagar</button>
+                            <button type="button" class="btn btn-editar" routerLink="/categorias/editar/{{categoria.id}}">Editar</button>
                         </td>
                     </tr>
+                    }
+                    
+                    
                 } @empty {
                     <tr>
                         <td colspan="5" class="vazio">Nenhuma categoria cadastrada</td>
@@ -41,3 +47,5 @@
         </table>
     </div>
 </div>
+
+

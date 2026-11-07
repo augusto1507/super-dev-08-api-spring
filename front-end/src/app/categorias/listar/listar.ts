@@ -30,4 +30,8 @@ export class CategoriaListar {
       next: () => this.carregarCategorias()
     });
   }
+
+  editar(id: number): void{
+
+  }
 }

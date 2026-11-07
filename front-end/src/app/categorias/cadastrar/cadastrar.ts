@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CategoriaService } from '../../services/categoria.service';
 import { CategoriaCadastrarRequest } from '../../model/categoria.model';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-cadastrar',
@@ -12,7 +12,9 @@ import { RouterLink } from '@angular/router';
 })
 export class CategoriaCadastrar {
 
-  constructor(private categoriaService: CategoriaService){}
+  constructor(private categoriaService: CategoriaService,
+    private router: Router
+  ){}
 
   form: CategoriaCadastrarRequest = {
     nome:"",
@@ -23,6 +25,7 @@ export class CategoriaCadastrar {
     this.categoriaService.cadastrar(this.form).subscribe({
       next: (Response) => {
         alert("Categoria criada com sucesso")
+        this.router.navigate(['/categorias'])
       }
     })
   }
